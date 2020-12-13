@@ -1,5 +1,5 @@
 Arguments: 
-  /Users/hugosum/.nvm/versions/node/v14.4.0/bin/node /Users/hugosum/.nvm/versions/node/v14.4.0/bin/yarn init
+  /Users/hugosum/.nvm/versions/node/v14.4.0/bin/node /Users/hugosum/.nvm/versions/node/v14.4.0/bin/yarn
 
 PATH: 
   /Users/hugosum/.nvm/versions/node/v14.4.0/bin:/Library/Frameworks/Python.framework/Versions/3.7/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Library/TeX/texbin:/Users/hugosum/.nvm/versions/node/v14.4.0/bin:/Library/Frameworks/Python.framework/Versions/3.7/bin
@@ -14,34 +14,37 @@ Platform:
   darwin x64
 
 Trace: 
-  Error: canceled
-      at Interface.<anonymous> (/Users/hugosum/.nvm/versions/node/v14.4.0/lib/node_modules/yarn/lib/cli.js:136216:13)
-      at Interface.emit (events.js:315:20)
-      at Interface._ttyWrite (readline.js:873:16)
-      at ReadStream.onkeypress (readline.js:213:10)
-      at ReadStream.emit (events.js:315:20)
-      at emitKeys (internal/readline/utils.js:335:14)
-      at emitKeys.next (<anonymous>)
-      at ReadStream.onData (readline.js:1140:36)
-      at ReadStream.emit (events.js:315:20)
-      at addChunk (_stream_readable.js:302:12)
+  SyntaxError: /Users/hugosum/Desktop/snowpack-plugin-prefetch-data/package.json: Unexpected token } in JSON at position 626
+      at JSON.parse (<anonymous>)
+      at /Users/hugosum/.nvm/versions/node/v14.4.0/lib/node_modules/yarn/lib/cli.js:1625:59
+      at Generator.next (<anonymous>)
+      at step (/Users/hugosum/.nvm/versions/node/v14.4.0/lib/node_modules/yarn/lib/cli.js:310:30)
+      at /Users/hugosum/.nvm/versions/node/v14.4.0/lib/node_modules/yarn/lib/cli.js:321:13
 
 npm manifest: 
   {
-    "scripts": {
-  
-    },
-    "dependencies": {
-      "react": "^17.0.1",
-      "react-dom": "^17.0.1",
-      "react-router-dom": "^5.2.0",
-      "tailwindcss": "^2.0.2"
-    },
+    "scripts": {},
+    "type": "commonjs",
     "dependencies": {
       "flat-cache": "^3.0.4",
       "fs-extra": "^9.0.1",
       "glob": "^7.1.6"
-    }
+    },
+    "name": "snowpack-plugin-prefetch-data",
+    "version": "1.0.0",
+    "main": "index.js",
+    "author": "Hugo Sum",
+    "license": "MIT",
+    "description": "A plugin to help you save API response as JSON during `snowpack build`.",
+    "keywords": [
+      "snowpack-plugin",
+      "snowpack"
+    ],
+    "private": false,
+    "bugs": {
+      "url": "https://github.com/winston0410/snowpack-plugin-prefetch-data/issues"
+    },
+    "homepage": "https://github.com/winston0410/snowpack-plugin-prefetch-data#readme",
   }
 
 yarn manifest: 
