@@ -1,4 +1,3 @@
-const glob = require('glob')
 const flatCache = require('flat-cache')
 const fs = require('fs-extra')
 const path = require('path')
@@ -7,24 +6,25 @@ const {
   warning,
   info
 } = require('log-symbols')
-const chalk = require('chalk');
+const chalk = require('chalk')
 
 const isEmptyObj = (obj) => Object.keys(obj).length === 0
 
 const fetchData = async (cache, filePath) => {
   const fetchFn = require(filePath)
   const data = await fetchFn()
-  cache.setKey(filePath, data)
+  const stringifiedData = JSON.stringify(data)
+  cache.setKey(filePath, stringifiedData)
   cache.setKey(`${filePath}-timestamp`, new Date().getTime())
   cache.save()
   return {
-    '.json': JSON.stringify(data)
+    '.json': stringifiedData
   }
 }
 
-const fetchWarning = () => {
-  console.log(
-    info, chalk.blue(`Data of ${filePath} has been fetched from external source.`)
+const fetchWarning = (filePath) => {
+  console.info(
+    chalk.yellow('!', `Data of ${filePath} has been fetched from external source.`)
   )
 }
 
@@ -40,8 +40,8 @@ module.exports = function (snowpackConfig, pluginOptions) {
     async load ({ fileExt, filePath }) {
       if (scriptSuffix.test(filePath)) {
         if (isEmptyObj(cache._persisted)) {
+          fetchWarning(filePath)
           return await fetchData(cache, filePath)
-          fetchWarning()
         }
 
         const previousFetchTimestamp = cache.getKey(`${filePath}-timestamp`)
@@ -49,12 +49,12 @@ module.exports = function (snowpackConfig, pluginOptions) {
         const timePassedSinceLastBuild = currentTimestamp - previousFetchTimestamp
 
         if (timePassedSinceLastBuild > cacheDuration) {
+          fetchWarning(filePath)
           return await fetchData(cache, filePath)
-          fetchWarning()
         }
 
         const cachedData = cache.getKey(filePath)
-        console.log(
+        console.info(
           success, chalk.green(`Data of ${filePath} has been served from cache.`)
         )
 
