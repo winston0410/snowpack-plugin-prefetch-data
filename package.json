@@ -20,5 +20,8 @@
   "bugs": {
     "url": "https://github.com/winston0410/snowpack-plugin-prefetch-data/issues"
   },
-  "homepage": "https://github.com/winston0410/snowpack-plugin-prefetch-data#readme"
+  "homepage": "https://github.com/winston0410/snowpack-plugin-prefetch-data#readme",
+  "files": [
+    "index.js"
+  ]
 }
