@@ -1,0 +1,24 @@
+{
+  "scripts": {},
+  "type": "commonjs",
+  "dependencies": {
+    "flat-cache": "^3.0.4",
+    "fs-extra": "^9.0.1",
+    "glob": "^7.1.6"
+  },
+  "name": "snowpack-plugin-prefetch-data",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "Hugo Sum",
+  "license": "MIT",
+  "description": "A plugin to help you save API response as JSON during `snowpack build`.",
+  "keywords": [
+    "snowpack-plugin",
+    "snowpack"
+  ],
+  "private": false,
+  "bugs": {
+    "url": "https://github.com/winston0410/snowpack-plugin-prefetch-data/issues"
+  },
+  "homepage": "https://github.com/winston0410/snowpack-plugin-prefetch-data#readme",
+}
