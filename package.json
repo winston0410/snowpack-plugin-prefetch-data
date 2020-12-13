@@ -23,5 +23,9 @@
   "homepage": "https://github.com/winston0410/snowpack-plugin-prefetch-data#readme",
   "files": [
     "index.js"
-  ]
+  ],
+  "devDependencies": {
+    "chalk": "^4.1.0",
+    "log-symbols": "^4.0.0"
+  }
 }
