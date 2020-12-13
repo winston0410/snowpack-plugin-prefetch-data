@@ -3,11 +3,9 @@ const flatCache = require('flat-cache')
 const fs = require('fs-extra')
 const path = require('path')
 const {
-  main: {
-    success,
-    warning,
-    info
-  }
+  success,
+  warning,
+  info
 } = require('log-symbols')
 const chalk = require('chalk');
 
